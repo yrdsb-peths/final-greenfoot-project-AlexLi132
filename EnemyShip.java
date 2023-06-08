@@ -16,4 +16,8 @@ public class EnemyShip extends Actor
     {
         // Add your action code here.
     }
+    public void moveAround()
+    {
+        move(5); 
+    }
 }

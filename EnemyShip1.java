@@ -13,11 +13,13 @@ public class EnemyShip1 extends EnemyShip
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Enemy1()
+    public EnemyShip1()
     {
-        setRotation(90); 
+        
     }
     public void act()
     {
-        // Add your action code here.
+        moveAround(); 
     }
+    
 }
