@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Label scoreLabel;
+    static int enemyCount = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,6 +23,18 @@ public class MyWorld extends World
         Battleship battleship = new Battleship();
         addObject (battleship, 300, 500);   
         
+    }
+    public void act()
+    {
+        if(Greenfoot.getRandomNumber(60)<1)
+        {
+            addEnemyShip1(); 
+            enemyCount++; 
+        }
+    }
+    public void addEnemyShip1()
+    {
+        addObject(new EnemyShip1(), Greenfoot.getRandomNumber(600), 0); 
     }
     public void gameOver()
     {

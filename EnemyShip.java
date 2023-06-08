@@ -18,6 +18,6 @@ public class EnemyShip extends Actor
     }
     public void moveAround()
     {
-        move(5); 
+        setLocation(getX(),getY()+3); 
     }
 }

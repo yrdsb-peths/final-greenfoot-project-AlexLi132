@@ -26,9 +26,15 @@ public class Battleship extends Actor
             move(2);
             
         }
-        
+        fireLazer(); 
         
         
     }
-    
+    public void fireLazer()
+    {
+        if(Greenfoot.isKeyDown("e"))
+        {
+            getWorld().addObject(new Lazer(), getX(), getY()-30);
+        }
+    }
 }
