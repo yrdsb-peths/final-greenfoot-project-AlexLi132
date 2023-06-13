@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Battleship extends Actor
 {
+    static boolean canFire = true;
     /**
      * Act - do whatever the Battleship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -32,9 +33,14 @@ public class Battleship extends Actor
     }
     public void fireLazer()
     {
-        if(Greenfoot.isKeyDown("e"))
+        if(Greenfoot.isKeyDown("e") && canFire == true)
         {
             getWorld().addObject(new Lazer(), getX(), getY()-30);
+            canFire = false; 
+        }
+        else if (!Greenfoot.isKeyDown("e"))
+        {
+            canFire = true; 
         }
     }
 }

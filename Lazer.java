@@ -14,14 +14,28 @@ public class Lazer extends Actor
      */
     public void act()
     {
+        
+        
         setLocation(getX(), getY() -5); 
-        remove();
+        
+        hitEnemy();
+        remove(); 
     }
     public void remove()
     {
         if(getY()==0)
         {
             getWorld().removeObject(this); 
+        }
+    }
+    public void hitEnemy()
+    {
+        if(isTouching(EnemyShip.class))
+        {
+            removeTouching(EnemyShip.class);
+            MyWorld world = (MyWorld) getWorld();
+            
+            
         }
     }
 }

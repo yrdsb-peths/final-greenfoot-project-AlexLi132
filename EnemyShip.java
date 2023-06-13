@@ -20,4 +20,11 @@ public class EnemyShip extends Actor
     {
         setLocation(getX(),getY()+3); 
     }
+    public void removeShip()
+    {
+        if(getY()==589)
+        {
+            getWorld().removeObject(this); 
+        }
+    }
 }
