@@ -13,6 +13,7 @@ public class MyWorld extends World
     public int score = 0;
     public int level = 0;
     public int speed = 3;
+    public int mothershipHealth = 100; 
     static int enemyCount = 0;
     /**
      * Constructor for objects of class MyWorld.
@@ -24,7 +25,9 @@ public class MyWorld extends World
         // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
         super(600, 590, 1);
         Battleship battleship = new Battleship();
-        addObject (battleship, 300, 500);   
+        addObject (battleship, 300, 450);   
+        Mothership mothership = new Mothership();
+        addObject (mothership, 300, 559);
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
     }
