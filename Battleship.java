@@ -41,6 +41,7 @@ public class Battleship extends Actor
         else if (!Greenfoot.isKeyDown("e"))
         {
             canFire = true; 
+            
         }
     }
 }

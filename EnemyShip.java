@@ -25,6 +25,7 @@ public class EnemyShip extends Actor
         if(getY()==589)
         {
             getWorld().removeObject(this); 
+            
         }
     }
 }

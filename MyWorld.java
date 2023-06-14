@@ -10,6 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Label scoreLabel;
+    public int score = 0;
+    public int level = 0;
     static int enemyCount = 0;
     /**
      * Constructor for objects of class MyWorld.
@@ -31,10 +33,19 @@ public class MyWorld extends World
             addEnemyShip1(); 
             enemyCount++; 
         }
+        if(Greenfoot.getRandomNumber(120)<1)
+        {
+            addEnemyShip2(); 
+            enemyCount++; 
+        }
     }
     public void addEnemyShip1()
     {
         addObject(new EnemyShip1(), Greenfoot.getRandomNumber(600), 0); 
+    }
+    public void addEnemyShip2()
+    {
+        addObject(new EnemyShip2(), Greenfoot.getRandomNumber(600), 0); 
     }
     public void gameOver()
     {
@@ -42,5 +53,15 @@ public class MyWorld extends World
         addObject(gameOverLabel, 300, 200);
         
         
+    }
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+        
+        if(score % 10 == 0)
+        {
+            level++;
+        }
     }
 }
