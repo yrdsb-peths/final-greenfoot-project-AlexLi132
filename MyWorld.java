@@ -12,7 +12,7 @@ public class MyWorld extends World
     Label scoreLabel;
     public int score = 0;
     public int level = 0;
-    public int speed = 2;
+    public int speed = 3;
     static int enemyCount = 0;
     /**
      * Constructor for objects of class MyWorld.
@@ -40,7 +40,7 @@ public class MyWorld extends World
             addEnemyShip2(); 
             enemyCount++; 
         }
-        if(Greenfoot.getRandomNumber(5000)<1)
+        if(Greenfoot.getRandomNumber(3000)<1)
         {
             addEnemyShipSpeed(); 
             enemyCount++; 

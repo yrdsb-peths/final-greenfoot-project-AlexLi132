@@ -12,7 +12,7 @@ public class SpeedPowerup extends EnemyShip
      * Act - do whatever the EnemyShip1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int healthSpeed = 10; 
+    int healthSpeed = 3; 
     public SpeedPowerup()
     {
         
