@@ -12,6 +12,7 @@ public class MyWorld extends World
     Label scoreLabel;
     public int score = 0;
     public int level = 0;
+    public int speed = 2;
     static int enemyCount = 0;
     /**
      * Constructor for objects of class MyWorld.
@@ -24,7 +25,8 @@ public class MyWorld extends World
         super(600, 590, 1);
         Battleship battleship = new Battleship();
         addObject (battleship, 300, 500);   
-        
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50, 50);
     }
     public void act()
     {
@@ -38,6 +40,11 @@ public class MyWorld extends World
             addEnemyShip2(); 
             enemyCount++; 
         }
+        if(Greenfoot.getRandomNumber(5000)<1)
+        {
+            addEnemyShipSpeed(); 
+            enemyCount++; 
+        }
     }
     public void addEnemyShip1()
     {
@@ -46,6 +53,10 @@ public class MyWorld extends World
     public void addEnemyShip2()
     {
         addObject(new EnemyShip2(), Greenfoot.getRandomNumber(600), 0); 
+    }
+    public void addEnemyShipSpeed()
+    {
+        addObject(new SpeedPowerup(), Greenfoot.getRandomNumber(600), 0); 
     }
     public void gameOver()
     {
@@ -63,5 +74,19 @@ public class MyWorld extends World
         {
             level++;
         }
+    }
+    public void increaseScore2()
+    {
+        score+=2;
+        scoreLabel.setValue(score);
+        
+        if(score % 10 == 0)
+        {
+            level++;
+        }
+    }
+    public void increaseSpeed()
+    {
+        speed++;
     }
 }

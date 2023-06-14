@@ -37,7 +37,7 @@ public class Lazer extends Actor
         {
             removeTouching(EnemyShip.class);
             MyWorld world = (MyWorld) getWorld();
-            
+            world.increaseScore();
             
         }
     }

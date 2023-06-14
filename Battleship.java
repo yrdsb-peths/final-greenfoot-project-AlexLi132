@@ -19,12 +19,14 @@ public class Battleship extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-2);
+            MyWorld world = (MyWorld) getWorld();
+            move(-world.speed);
             
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(2);
+            MyWorld world = (MyWorld) getWorld();
+            move(world.speed);
             
         }
         fireLazer(); 
