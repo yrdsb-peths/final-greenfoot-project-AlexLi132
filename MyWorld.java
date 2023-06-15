@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Label scoreLabel;
+    Label healthLabel;
     public int score = 0;
     public int level = 0;
     public int speed = 3;
@@ -30,6 +31,8 @@ public class MyWorld extends World
         addObject (mothership, 275, 550);
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
+        healthLabel = new Label("Health: " + 100, 35); 
+        addObject(healthLabel, 111, 100);
     }
     public void act()
     {
@@ -90,7 +93,7 @@ public class MyWorld extends World
     }
     public void increaseSpeed()
     {
-        speed++;
+        speed++; 
     }
     public void decreaseHealth()
     {
@@ -99,5 +102,6 @@ public class MyWorld extends World
     public void decreaseHealth2()
     {
         mothershipHealth-=2; 
+        healthLabel.setValue("Health: " + mothershipHealth);
     }
 }
