@@ -22,6 +22,9 @@ public class SpeedPowerup extends EnemyShip
         
         
     }
+     /**
+     * Increases speed when hit 
+     */
     public void hitEnemySpeed()
     {
         Actor projectile = getOneIntersectingObject(Lazer.class);
@@ -53,6 +56,9 @@ public class SpeedPowerup extends EnemyShip
         setImage(Animation[0]);
     }
     int imageIndex = 0;
+     /**
+     * Animates the speed powerup
+     */
     public void animate()
     {
         if(animationTimer.millisElapsed() < 300)

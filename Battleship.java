@@ -33,6 +33,9 @@ public class Battleship extends Actor
         
         
     }
+     /**
+     * Shoots a lazer 
+     */
     public void fireLazer()
     {
         if(Greenfoot.isKeyDown("e") && canFire == true)

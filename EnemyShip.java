@@ -17,17 +17,12 @@ public class EnemyShip extends Actor
     {
         // Add your action code here.
     }
+     /**
+     * Makes the planets fall
+     */
     public void fall()
     {
         setLocation(getX(),getY()+3); 
     }
-    public void removeShip()
-    {
-        if(getY()==589)
-        {
-            getWorld().removeObject(this); 
-           
-           
-        }
-    }
+    
 }

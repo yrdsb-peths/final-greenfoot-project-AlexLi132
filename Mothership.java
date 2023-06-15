@@ -18,7 +18,11 @@ public class Mothership extends Actor
         hitEnemy1();
         hitEnemy2(); 
         hitPowerup();
+        endGame();
     }
+    /**
+     * Decreases health when hit by enemy 
+     */
     public void hitEnemy2()
     {
         if(isTouching(EnemyShip2.class))
@@ -29,6 +33,22 @@ public class Mothership extends Actor
             
         }
     }
+    /**
+     * Decreases health when hit by enemy 
+     */
+    public void hitEnemy3()
+    {
+        if(isTouching(EnemyShip3.class))
+        {
+            removeTouching(EnemyShip3.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.decreaseHealth5(); 
+            
+        }
+    }
+    /**
+     * Decreases health when hit by enemy 
+     */
     public void hitEnemy1()
     {
         if(isTouching(EnemyShip1.class))
@@ -39,6 +59,9 @@ public class Mothership extends Actor
             
         }
     }
+    /**
+     * Decreases health when hit by powerup
+     */
     public void hitPowerup()
     {
         if(isTouching(SpeedPowerup.class))
@@ -49,6 +72,9 @@ public class Mothership extends Actor
             
         }
     }
+    /**
+     * Ends game when hit by powerup
+     */
     public void endGame()
     {
         MyWorld world = (MyWorld) getWorld();

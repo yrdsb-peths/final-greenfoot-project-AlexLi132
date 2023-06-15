@@ -25,6 +25,9 @@ public class EnemyShip2 extends EnemyShip
         
         
     }
+     /**
+     * Removes ship when hit by projectile twice
+     */
     public void hitEnemy2()
     {
         Actor projectile = getOneIntersectingObject(Lazer.class);
