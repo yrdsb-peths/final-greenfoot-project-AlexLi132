@@ -38,7 +38,7 @@ public class SpeedPowerup extends EnemyShip
             MyWorld world = (MyWorld) getWorld();
             world.increaseSpeed();
             getWorld().removeObject(this); 
-            
+            world.powerupSound.play();
             
         }
     }

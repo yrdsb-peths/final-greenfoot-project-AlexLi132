@@ -19,6 +19,9 @@ public class MyWorld extends World
     public boolean spawned = false; 
     static int enemyCount = 0;
     GreenfootSound backgroundMusic = new GreenfootSound("music.mp3"); 
+    GreenfootSound ding = new GreenfootSound("ding2.mp3");
+    GreenfootSound hit = new GreenfootSound("hit.mp3");
+    GreenfootSound powerupSound = new GreenfootSound("powerup.mp3");
     /**
      * Constructor for objects of class MyWorld.
      * 

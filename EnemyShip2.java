@@ -40,6 +40,7 @@ public class EnemyShip2 extends EnemyShip
         {
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore2();
+            world.ding.play();
             getWorld().removeObject(this); 
             
             

@@ -38,7 +38,7 @@ public class LazerPowerup extends EnemyShip
             
             getWorld().removeObject(this); 
             world.powerup = true; 
-            
+            world.powerupSound.play();
         }
     }
 

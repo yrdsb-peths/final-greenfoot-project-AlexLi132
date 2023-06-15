@@ -38,7 +38,7 @@ public class HealthPowerup extends EnemyShip
             world.mothershipHealth += 5; 
             world.healthLabel.setValue("HP: " + world.mothershipHealth);
             getWorld().removeObject(this); 
-            
+            world.powerupSound.play();
             
         }
     }
