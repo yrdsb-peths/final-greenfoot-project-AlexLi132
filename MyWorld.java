@@ -16,6 +16,7 @@ public class MyWorld extends World
     public int speed = 3;
     public int mothershipHealth = 100; 
     static int enemyCount = 0;
+    GreenfootSound backgroundMusic = new GreenfootSound("music.mp3"); 
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,6 +26,7 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
         super(550, 590, 1);
+        backgroundMusic.play(); 
         Battleship battleship = new Battleship();
         addObject (battleship, 275, 425);   
         Mothership mothership = new Mothership();

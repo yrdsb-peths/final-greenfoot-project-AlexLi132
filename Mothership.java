@@ -17,6 +17,7 @@ public class Mothership extends Actor
     {
         hitEnemy1();
         hitEnemy2(); 
+        hitEnemy3();
         hitPowerup();
         endGame();
     }
