@@ -1,6 +1,8 @@
 # Final Greenfoot Project
-This is the README.md file.
+**Congratulations!** 
+You have been given the honor to protect the Galactic Mothership from incoming enemies! 
+Use -> and <- to move around & use "E" to fire your lazer. 
 
-Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
+As you defeat more enemies, they become stronger and gain more health! Collect animated powerups to improve your battle capabilities! 
 
 
