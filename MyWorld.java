@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The world of the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alex
+ * @version June 5
  */
 
 public class MyWorld extends World
@@ -46,6 +46,11 @@ public class MyWorld extends World
             addEnemyShip2(); 
             enemyCount++; 
         }
+        if(Greenfoot.getRandomNumber(400)<1)
+        {
+            addEnemyShip3(); 
+            enemyCount++; 
+        }
         if(Greenfoot.getRandomNumber(3000)<1)
         {
             addEnemyShipSpeed(); 
@@ -54,15 +59,19 @@ public class MyWorld extends World
     }
     public void addEnemyShip1()
     {
-        addObject(new EnemyShip1(), Greenfoot.getRandomNumber(500), 0); 
+        addObject(new EnemyShip1(), Greenfoot.getRandomNumber(400), 0); 
     }
     public void addEnemyShip2()
     {
-        addObject(new EnemyShip2(), Greenfoot.getRandomNumber(500), 0); 
+        addObject(new EnemyShip2(), Greenfoot.getRandomNumber(400), 0); 
+    }
+    public void addEnemyShip3()
+    {
+        addObject(new EnemyShip3(), Greenfoot.getRandomNumber(400), 0); 
     }
     public void addEnemyShipSpeed()
     {
-        addObject(new SpeedPowerup(), Greenfoot.getRandomNumber(500), 0); 
+        addObject(new SpeedPowerup(), Greenfoot.getRandomNumber(400), 0); 
     }
     public void gameOver()
     {
@@ -84,6 +93,16 @@ public class MyWorld extends World
     public void increaseScore2()
     {
         score+=2;
+        scoreLabel.setValue(score);
+        
+        if(score % 10 == 0)
+        {
+            level++;
+        }
+    }
+    public void increaseScore5()
+    {
+        score+=5;
         scoreLabel.setValue(score);
         
         if(score % 10 == 0)

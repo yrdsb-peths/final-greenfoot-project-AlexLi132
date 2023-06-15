@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EnemyShip1 here.
+ * Second Enemy Ship (Planet)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alex 
+ * @version June 10
  */
 public class EnemyShip2 extends EnemyShip
 {
@@ -20,7 +20,7 @@ public class EnemyShip2 extends EnemyShip
     }
     public void act()
     {
-        moveAround(); 
+        fall(); 
         hitEnemy2(); 
         
         

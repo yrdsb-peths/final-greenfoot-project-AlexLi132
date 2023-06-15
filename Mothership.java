@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Mothership here.
+ * Protected by the spaceship
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alex
+ * @version June 14
  */
 public class Mothership extends Actor
 {
@@ -17,6 +17,7 @@ public class Mothership extends Actor
     {
         hitEnemy1();
         hitEnemy2(); 
+        hitPowerup();
     }
     public void hitEnemy2()
     {
@@ -46,6 +47,14 @@ public class Mothership extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.decreaseHealth(); 
             
+        }
+    }
+    public void endGame()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        if(world.mothershipHealth == 0)
+        {
+            world.gameOver();
         }
     }
 }

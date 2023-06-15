@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EnemyShip1 here.
+ * Powerup that increases speed
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alex
+ * @version June 12
  */
 public class SpeedPowerup extends EnemyShip
 {
@@ -13,13 +13,11 @@ public class SpeedPowerup extends EnemyShip
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int healthSpeed = 3; 
-    public SpeedPowerup()
-    {
-        
-    }
+    
     public void act()
     {
-        moveAround(); 
+        fall(); 
+        animate();
         hitEnemySpeed(); 
         
         
@@ -40,5 +38,31 @@ public class SpeedPowerup extends EnemyShip
             
             
         }
+    }
+    GreenfootImage[] Animation = new GreenfootImage[2];
+    SimpleTimer animationTimer = new SimpleTimer();
+    
+    public SpeedPowerup()
+    {
+        for(int i =0; i < Animation.length; i++)
+        {
+            Animation[i] = new GreenfootImage("images/star/star" + i + ".png");
+            Animation[i].scale(50, 50);
+        }
+        animationTimer.mark();
+        setImage(Animation[0]);
+    }
+    int imageIndex = 0;
+    public void animate()
+    {
+        if(animationTimer.millisElapsed() < 300)
+        {
+            return;
+        }
+        animationTimer.mark();
+        setImage(Animation[imageIndex]);
+        imageIndex = (imageIndex + 1)  % Animation.length;
+        
+        
     }
 }

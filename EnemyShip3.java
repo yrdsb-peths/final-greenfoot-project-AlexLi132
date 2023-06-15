@@ -1,19 +1,46 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EnemyShip3 here.
+ * Second Enemy Ship (Planet)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Alex 
+ * @version June 10
  */
 public class EnemyShip3 extends EnemyShip
 {
     /**
-     * Act - do whatever the EnemyShip3 wants to do. This method is called whenever
+     * Act - do whatever the EnemyShip1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int health3 = 5; 
+   
+    public EnemyShip3()
+    {
+        
+    }
     public void act()
     {
-        // Add your action code here.
+        fall(); 
+        hitEnemy3(); 
+        
+        
     }
+    public void hitEnemy3()
+    {
+        Actor projectile = getOneIntersectingObject(Lazer.class);
+        if(projectile != null)
+        {
+            getWorld().removeObject(projectile); 
+            health3--;
+        }
+        if(health3 == 0)
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScore5();
+            getWorld().removeObject(this); 
+            
+            
+        }
+    }
+    
 }
