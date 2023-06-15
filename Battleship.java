@@ -41,6 +41,11 @@ public class Battleship extends Actor
         if(Greenfoot.isKeyDown("e") && canFire == true)
         {
             getWorld().addObject(new Lazer(), getX(), getY()-30);
+            MyWorld world = (MyWorld) getWorld(); 
+            if(world.powerup = true)
+            {
+                getWorld().addObject(new Lazer(), getX(), getY()-45);
+            }
             canFire = false; 
         }
         else if (!Greenfoot.isKeyDown("e"))

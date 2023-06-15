@@ -15,6 +15,7 @@ public class MyWorld extends World
     public int level = 0;
     public int speed = 3;
     public int mothershipHealth = 100; 
+    public boolean powerup = false;
     static int enemyCount = 0;
     GreenfootSound backgroundMusic = new GreenfootSound("music.mp3"); 
     /**
@@ -64,6 +65,11 @@ public class MyWorld extends World
             addEnemyShipSpeed(); 
             enemyCount++; 
         }
+        if(Greenfoot.getRandomNumber(3000)<1)
+        {
+            addEnemyShipLazer();
+            enemyCount++; 
+        }
     }
      /**
      * Spawn method for enemyship 1
@@ -92,6 +98,13 @@ public class MyWorld extends World
     public void addEnemyShipSpeed()
     {
         addObject(new SpeedPowerup(), Greenfoot.getRandomNumber(400), 0); 
+    }
+    /**
+     * Spawn method for lazer powerup
+     */
+    public void addEnemyShipLazer()
+    {
+        addObject(new LazerPowerup(), Greenfoot.getRandomNumber(400), 0); 
     }
      /**
      * End the game
