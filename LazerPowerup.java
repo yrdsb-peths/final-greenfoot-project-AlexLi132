@@ -35,9 +35,9 @@ public class LazerPowerup extends EnemyShip
         if(healthLazer == 0)
         {
             MyWorld world = (MyWorld) getWorld();
-            world.powerup = true; 
-            getWorld().removeObject(this); 
             
+            getWorld().removeObject(this); 
+            world.powerup = true; 
             
         }
     }

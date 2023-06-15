@@ -42,7 +42,7 @@ public class Battleship extends Actor
         {
             getWorld().addObject(new Lazer(), getX(), getY()-30);
             MyWorld world = (MyWorld) getWorld(); 
-            if(world.powerup = true)
+            if(world.powerup == true)
             {
                 getWorld().addObject(new Lazer(), getX(), getY()-45);
             }

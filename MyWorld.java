@@ -16,6 +16,7 @@ public class MyWorld extends World
     public int speed = 3;
     public int mothershipHealth = 100; 
     public boolean powerup = false;
+    public boolean spawned = false; 
     static int enemyCount = 0;
     GreenfootSound backgroundMusic = new GreenfootSound("music.mp3"); 
     /**
@@ -52,7 +53,7 @@ public class MyWorld extends World
             } 
             enemyCount++; 
         }
-        if(Greenfoot.getRandomNumber(400)<1)
+        if(Greenfoot.getRandomNumber(200)<1)
         {
             if(level >= 3) 
             {
@@ -60,15 +61,29 @@ public class MyWorld extends World
             }
             enemyCount++; 
         }
+        if(Greenfoot.getRandomNumber(300)<1)
+        {
+            if(level >= 4)
+            {
+                addEnemyShip4(); 
+            }
+        }
+        
         if(Greenfoot.getRandomNumber(3000)<1)
         {
             addEnemyShipSpeed(); 
             enemyCount++; 
         }
-        if(Greenfoot.getRandomNumber(3000)<1)
+        if(Greenfoot.getRandomNumber(10000)<1)
         {
             addEnemyShipLazer();
             enemyCount++; 
+            
+        }
+        if(Greenfoot.getRandomNumber(10000)<1)
+        {
+            addEnemyShipHealth();
+            enemyCount++;
         }
     }
      /**
@@ -92,6 +107,10 @@ public class MyWorld extends World
     {
         addObject(new EnemyShip3(), Greenfoot.getRandomNumber(400), 0); 
     }
+    public void addEnemyShip4()
+    {
+        addObject(new EnemyShip4(), Greenfoot.getRandomNumber(400), 0); 
+    }
     /**
      * Spawn method for speed powerup
      */
@@ -105,6 +124,14 @@ public class MyWorld extends World
     public void addEnemyShipLazer()
     {
         addObject(new LazerPowerup(), Greenfoot.getRandomNumber(400), 0); 
+        spawned = true; 
+    }
+     /**
+     * Spawn method for lazer powerup
+     */
+    public void addEnemyShipHealth()
+    {
+        addObject(new HealthPowerup(), Greenfoot.getRandomNumber(400), 0); 
     }
      /**
      * End the game
@@ -146,6 +173,16 @@ public class MyWorld extends World
     public void increaseScore5()
     {
         score+=5;
+        scoreLabel.setValue(score);
+        
+        
+    }
+    /**
+     * Increases score by 10
+     */
+    public void increaseScore10()
+    {
+        score+=10;
         scoreLabel.setValue(score);
         
         

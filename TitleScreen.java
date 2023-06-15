@@ -47,33 +47,20 @@ public class TitleScreen extends World
     {
 
         Label label = new Label("Press <RUN> to Begin!", 40);
-        addObject(label,275,184);
+        addObject(label,300,150);
         Label label2 = new Label("Use \u2190 and \u2192 to Move Spaceship!", 40);
-        addObject(label2,275,309);
+        addObject(label2,300,190);
         Label label3 = new Label("Press E to Shoot!", 40);
-        addObject(label3,275,255);
+        addObject(label3,300,230);
         Label label4 = new Label("Defend the Mothership!", 40);
-        addObject(label4,275,255);
+        addObject(label4,300,270);
         Battleship battleship = new Battleship();
         addObject(battleship,95,69);
-        label.setLocation(300,146);
-        label2.setLocation(313,194);
-        label3.setLocation(335,256);
-        label2.setLocation(355,194);
+        
         Mothership mothership = new Mothership();
         addObject(mothership,299,355);
         battleship.setLocation(107,62);
 
-        label3.setLocation(289,259);
-        label3.setLocation(301,292);
-        label3.setLocation(288,223);
-        label4.setLocation(311,262);
-        label2.setLocation(300,183);
-        label3.setLocation(300,223);
-        label4.setLocation(279,251);
-        label4.setLocation(405,262);
-        label4.setLocation(415,258);
-        label4.setLocation(250,256);
-        label4.setLocation(300,267);
+        
     }
 }

@@ -1,49 +1,47 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Second Enemy Ship (Planet)
+ * Powerup that increases speed
  * 
- * @author Alex 
- * @version June 10
+ * @author Alex
+ * @version June 12
  */
-public class EnemyShip4 extends EnemyShip
+public class HealthPowerup extends EnemyShip
 {
     /**
      * Act - do whatever the EnemyShip1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int health4 = 10; 
-   
-    public EnemyShip4()
-    {
-        
-    }
+    int healthHealth = 3; 
+    
     public void act()
     {
         fall(); 
-        hitEnemy4(); 
+        hitEnemyHealth(); 
         
         
     }
      /**
-     * Removes ship when hit by lazer 10 times 
+     * Increases lazer power when hit 
      */
-    public void hitEnemy4()
+    public void hitEnemyHealth()
     {
         Actor projectile = getOneIntersectingObject(Lazer.class);
         if(projectile != null)
         {
             getWorld().removeObject(projectile); 
-            health4--;
+            healthHealth--;
         }
-        if(health4 == 0)
+        if(healthHealth == 0)
         {
             MyWorld world = (MyWorld) getWorld();
-            world.increaseScore10();
+            world.mothershipHealth += 5; 
+            world.healthLabel.setValue("HP: " + world.mothershipHealth);
             getWorld().removeObject(this); 
             
             
         }
     }
-    
+
+
 }
