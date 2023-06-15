@@ -15,7 +15,8 @@ public class Mothership extends Actor
     
     public void act()
     {
-       hitEnemy2(); 
+        hitEnemy1();
+        hitEnemy2(); 
     }
     public void hitEnemy2()
     {
@@ -24,6 +25,26 @@ public class Mothership extends Actor
             removeTouching(EnemyShip2.class);
             MyWorld world = (MyWorld) getWorld();
             world.decreaseHealth2(); 
+            
+        }
+    }
+    public void hitEnemy1()
+    {
+        if(isTouching(EnemyShip1.class))
+        {
+            removeTouching(EnemyShip1.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.decreaseHealth(); 
+            
+        }
+    }
+    public void hitPowerup()
+    {
+        if(isTouching(SpeedPowerup.class))
+        {
+            removeTouching(SpeedPowerup.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.decreaseHealth(); 
             
         }
     }

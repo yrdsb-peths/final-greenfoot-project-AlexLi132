@@ -29,10 +29,10 @@ public class MyWorld extends World
         addObject (battleship, 275, 450);   
         Mothership mothership = new Mothership();
         addObject (mothership, 275, 550);
-        scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 50, 50);
-        healthLabel = new Label("Health: " + 100, 35); 
-        addObject(healthLabel, 111, 100);
+        scoreLabel = new Label(0, 45);
+        addObject(scoreLabel, 520, 35);
+        healthLabel = new Label("HP: " + 100, 45); 
+        addObject(healthLabel, 75, 35);
     }
     public void act()
     {
@@ -98,10 +98,11 @@ public class MyWorld extends World
     public void decreaseHealth()
     {
         mothershipHealth--;
+        healthLabel.setValue("HP: " + mothershipHealth);
     }
     public void decreaseHealth2()
     {
         mothershipHealth-=2; 
-        healthLabel.setValue("Health: " + mothershipHealth);
+        healthLabel.setValue("HP: " + mothershipHealth);
     }
 }
