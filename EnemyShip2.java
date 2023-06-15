@@ -13,6 +13,7 @@ public class EnemyShip2 extends EnemyShip
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int health2 = 2; 
+   
     public EnemyShip2()
     {
         
@@ -41,4 +42,5 @@ public class EnemyShip2 extends EnemyShip
             
         }
     }
+    
 }

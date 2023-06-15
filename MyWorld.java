@@ -23,11 +23,11 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
-        super(600, 590, 1);
+        super(550, 590, 1);
         Battleship battleship = new Battleship();
-        addObject (battleship, 300, 450);   
+        addObject (battleship, 275, 450);   
         Mothership mothership = new Mothership();
-        addObject (mothership, 300, 559);
+        addObject (mothership, 275, 550);
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
     }
@@ -51,15 +51,15 @@ public class MyWorld extends World
     }
     public void addEnemyShip1()
     {
-        addObject(new EnemyShip1(), Greenfoot.getRandomNumber(600), 0); 
+        addObject(new EnemyShip1(), Greenfoot.getRandomNumber(500), 0); 
     }
     public void addEnemyShip2()
     {
-        addObject(new EnemyShip2(), Greenfoot.getRandomNumber(600), 0); 
+        addObject(new EnemyShip2(), Greenfoot.getRandomNumber(500), 0); 
     }
     public void addEnemyShipSpeed()
     {
-        addObject(new SpeedPowerup(), Greenfoot.getRandomNumber(600), 0); 
+        addObject(new SpeedPowerup(), Greenfoot.getRandomNumber(500), 0); 
     }
     public void gameOver()
     {
@@ -91,5 +91,13 @@ public class MyWorld extends World
     public void increaseSpeed()
     {
         speed++;
+    }
+    public void decreaseHealth()
+    {
+        mothershipHealth--;
+    }
+    public void decreaseHealth2()
+    {
+        mothershipHealth-=2; 
     }
 }
